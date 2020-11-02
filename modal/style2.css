@@ -1,0 +1,59 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: rgb(190, 211, 71);
+}
+
+.container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.content {
+  /* display: flex; */
+  width: 600px;
+  transition: filter 0.5s;
+}
+
+.content.active {
+  filter: blur(15px);
+  transition: 0.2s;
+  pointer-events: none;
+}
+
+.btn {
+  display: inline-block;
+  font-size: 14px;
+  padding: 0.6em 1.6em;
+  /* em 단위는 폰트사이즈와 비례하여 증가, 버튼과 폰트 비율이 동일하게 유지가능 */
+  background: black;
+  color: white;
+  text-transform: capitalize;
+  margin-top: 15px;
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 30px;
+  opacity: 0;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgb(40, 46, 46);
+  transition: opacity 0.3s, top 0.3s;
+}
+
+.modal.active {
+  opacity: 1;
+  top: 50%;
+}
